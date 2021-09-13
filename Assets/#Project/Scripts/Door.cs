@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     public Sprite doorClosed;
     public UnityEvent whenEnter;
 
-    //public string destination;
+    
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
     }
 
 
-    private void onTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isOpen)
         {
@@ -40,10 +40,4 @@ public class Door : MonoBehaviour
         isOpen = true;
         GetComponent<SpriteRenderer>().sprite = doorOpen;
     }
-
-    // public void SceneChanger()
-    // {
-    //     SceneManager.LoadScene("SecondScene");
-
-    // }
 }

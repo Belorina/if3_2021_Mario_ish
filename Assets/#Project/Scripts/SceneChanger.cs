@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public string destination;
-
-    public void LoadNextScene(Collider2D other)
+    public void Load(string destination)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(destination);
-        }
+
+        SceneManager.LoadScene(destination);
+
     }
 }
