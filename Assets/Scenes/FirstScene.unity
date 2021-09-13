@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &44642747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44642749}
+  - component: {fileID: 44642748}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &44642748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44642747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e41c9d4f3780ca4abf0bea003cf1f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: 
+--- !u!4 &44642749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44642747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &77104544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8035299252275839466, guid: a957b0eb7d6073541bf79754a13d003a, type: 3}
@@ -880,24 +924,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &810194145 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 87a2357765801c34292d6718d8b4d770, type: 3}
+--- !u!58 &810194151 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5800000, guid: 87a2357765801c34292d6718d8b4d770, type: 3}
   m_PrefabInstance: {fileID: 1971970938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &810194146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 810194145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be98c00d9dde0a44b5484944151e2d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemToPickUp: FloppyDisk
 --- !u!1 &818981117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2060,7 @@ GameObject:
   - component: {fileID: 1330429481}
   - component: {fileID: 1330429483}
   - component: {fileID: 1330429484}
+  - component: {fileID: 1330429485}
   m_Layer: 0
   m_Name: Floppy Disk
   m_TagString: FloppyDisk
@@ -2118,7 +2150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.58181816, y: 0.58181816}
+    oldSize: {x: 0.625, y: 0.625}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2146,6 +2178,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1330429485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330429480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3f639d9c906ba41b0389eca68307e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whenPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2079710664}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: Unlock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1349967728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,9 +3177,10 @@ GameObject:
   - component: {fileID: 2079710661}
   - component: {fileID: 2079710660}
   - component: {fileID: 2079710662}
+  - component: {fileID: 2079710664}
   - component: {fileID: 2079710663}
   m_Layer: 0
-  m_Name: PixelDoor
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3185,7 +3245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079710659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.89, y: 0.96, z: 0}
+  m_LocalPosition: {x: 14, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3226,10 +3286,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 2079710659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02374c75f3943f4884762de6a6decd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e41c9d4f3780ca4abf0bea003cf1f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: SecondScene
+--- !u!114 &2079710664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079710659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02374c75f3943f4884762de6a6decd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  doorOpen: {fileID: 21300000, guid: 5e1652c97407184429e6635d2e613b7e, type: 3}
+  doorClosed: {fileID: 21300000, guid: 4c00073c70adaf9419d63962683f7960, type: 3}
+  whenEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 44642748}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: OnTriggerEnter2D
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 810194151}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider2D, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2126747305
 PrefabInstance:
   m_ObjectHideFlags: 0
