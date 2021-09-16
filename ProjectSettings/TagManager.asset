@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FloppyDisk
+  - Start
   layers:
   - Default
   - TransparentFX
