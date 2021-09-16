@@ -59,7 +59,7 @@ public class MovingMonster : Monster
         Debug.DrawRay(start, direction * hitRange, Color.magenta);        //debug pour voir le rayons fictive
         RaycastHit2D hit = Physics2D.Raycast(start, direction, hitRange);
 
-        if (hit.collider != null)
+        if (hit.collider != null && !hit.transform.CompareTag("Player"))
         {
             speed.x *= -1;       // quand tu vois un obstacle change 
 
