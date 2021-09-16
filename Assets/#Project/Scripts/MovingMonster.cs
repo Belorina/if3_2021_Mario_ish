@@ -6,14 +6,20 @@ public class MovingMonster : Monster
 {
 
     SpriteRenderer mySpriteRenderer;
+
+    [Tooltip("Monster speed")]
     public Vector2 speed = Vector2.zero;       //Vector2 car 2D pas d axe Z  
 
+    [Tooltip("Distance obstacle detection, equals or less then:")]
     public float hitRange = 0.1f;
+
+    private Animator animator;      // NULL
 
     // Start is called before the first frame update
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();        // si il ny a pas d animator = return NULL
     }
 
     // Update is called once per frame
@@ -25,13 +31,27 @@ public class MovingMonster : Monster
 
         if (speed.x > 0)
         {
-            mySpriteRenderer.flipX = false;
+            if (animator != null)
+            {
+                animator.SetBool("right", false);       // si y a animator right = false / lancer lanimation
+            }
+            else
+            {
+                mySpriteRenderer.flipX = false;     // si l'animation est NULL, on continue avec les flip 
+            }
             start = (Vector2)transform.position + Vector2.right * 0.51f;
             direction = Vector2.right;
         }
         else
         {
-            mySpriteRenderer.flipX = true;
+            if (animator != null)                           // if there is an animator 
+            {
+                animator.SetBool("right", true);            // set animation bool condition to true (because going to left) 
+            }
+            else                                            // no animator ? 
+            {
+                mySpriteRenderer.flipX = true;              // "continue" sprite flip 
+            }
             start = (Vector2)transform.position + Vector2.left * 0.51f;
             direction = Vector2.left;
         }
@@ -44,7 +64,7 @@ public class MovingMonster : Monster
             speed.x *= -1;       // quand tu vois un obstacle change 
 
         }
-        
+
         // deplacement 
         Vector2 deplacement = speed * Time.deltaTime;
         transform.position += (Vector3)deplacement;         // position vector3 meme en 2D  - casting vector2 en vector3 
