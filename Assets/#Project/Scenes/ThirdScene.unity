@@ -997,7 +997,7 @@ Transform:
   m_Children:
   - {fileID: 2128333319}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220204661
 GameObject:
@@ -3909,7 +3909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221847636022072310, guid: d2f0254035f30c44ea08097d136c405c, type: 3}
       propertyPath: whenEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: FourthScene
+      value: WinScene
       objectReference: {fileID: 0}
     - target: {fileID: 4221847636022072310, guid: d2f0254035f30c44ea08097d136c405c, type: 3}
       propertyPath: whenEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5663,7 +5663,7 @@ Transform:
   - {fileID: 1603487974}
   - {fileID: 2008379270}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598469196
 GameObject:
@@ -6590,7 +6590,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.1676416
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6614,7 +6614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796253430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0.7, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6750,7 +6750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500789093741100007, guid: b0278fcc269cd174b8852864cf9e0cb9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2500789093741100007, guid: b0278fcc269cd174b8852864cf9e0cb9, type: 3}
       propertyPath: m_LocalPosition.x
